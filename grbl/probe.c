@@ -36,6 +36,8 @@ void probe_init()
 
   
   probe_configure_invert_mask(false); // Initialize invert mask.
+#else
+  #error "No PROBE_PIN configured"
 #endif
 }
 
