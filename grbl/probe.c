@@ -2,9 +2,6 @@
   probe.c - code pertaining to probing methods
   Part of Grbl
   Copyright (c) 2014-2016 Sungeun K. Jeon for Gnea Research LLC
-	
-	2018 -	Bart Dring This file was modifed for use on the ESP32
-					CPU. Do not use this with Grbl for atMega328P
   Grbl is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
@@ -27,16 +24,13 @@ uint8_t probe_invert_mask;
 // Probe pin initialization routine.
 void probe_init()
 {
-#ifdef PROBE_PIN
+  PROBE_DDR &= ~(PROBE_MASK); // Configure as input pins
   #ifdef DISABLE_PROBE_PIN_PULL_UP
-    pinMode(PROBE_PIN, INPUT);
+    PROBE_PORT &= ~(PROBE_MASK); // Normal low operation. Requires external pull-down.
   #else
-    pinMode(PROBE_PIN, INPUT_PULLUP);    // Enable internal pull-up resistors. Normal high operation.
+    PROBE_PORT |= PROBE_MASK;    // Enable internal pull-up resistors. Normal high operation.
   #endif
-
-  
   probe_configure_invert_mask(false); // Initialize invert mask.
-#endif
 }
 
 
@@ -47,18 +41,12 @@ void probe_configure_invert_mask(uint8_t is_probe_away)
 {
   probe_invert_mask = 0; // Initialize as zero.
   if (bit_isfalse(settings.flags,BITFLAG_INVERT_PROBE_PIN)) { probe_invert_mask ^= PROBE_MASK; }
-  if (is_probe_away) { probe_invert_mask  ^= PROBE_MASK; }
+  if (is_probe_away) { probe_invert_mask ^= PROBE_MASK; }
 }
 
+
 // Returns the probe pin state. Triggered = true. Called by gcode parser and probe state monitor.
-uint8_t probe_get_state() 
-{ 
-#ifdef PROBE_PIN
-	return((digitalRead(PROBE_PIN)) ^ probe_invert_mask); 
-#else
-	return false;
-#endif
-}
+uint8_t probe_get_state() { return((PROBE_PIN & PROBE_MASK) ^ probe_invert_mask); }
 
 
 // Monitors probe pin state and records the system position when detected. Called by the
