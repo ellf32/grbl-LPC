@@ -1,20 +1,16 @@
 /*
   config.h - compile time configuration
   Part of Grbl
-
   Copyright (c) 2012-2016 Sungeun K. Jeon for Gnea Research LLC
   Copyright (c) 2009-2011 Simen Svale Skogsrud
-
   Grbl is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
-
   Grbl is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
-
   You should have received a copy of the GNU General Public License
   along with Grbl.  If not, see <http://www.gnu.org/licenses/>.
 */
@@ -617,7 +613,6 @@
 
 /* ---------------------------------------------------------------------------------------
    OEM Single File Configuration Option
-
    Instructions: Paste the cpu_map and default setting definitions below without an enclosing
    #ifdef. Comment out the CPU_MAP_xxx and DEFAULT_xxx defines at the top of this file, and
    the compiler will ignore the contents of defaults.h and cpu_map.h and use the definitions
@@ -734,47 +729,47 @@
 #define CURRENT_FACTOR 113.33           // Convert amps to digipot value
 
 // Paste default settings definitions here.
-#define DEFAULT_X_STEPS_PER_MM 1600
-#define DEFAULT_Y_STEPS_PER_MM 1600
-#define DEFAULT_Z_STEPS_PER_MM 3400
-#define DEFAULT_X_MAX_RATE 3000 // mm/min
-#define DEFAULT_Y_MAX_RATE 3000 // mm/min
-#define DEFAULT_Z_MAX_RATE 1000 // mm/min
-#define DEFAULT_X_ACCELERATION (100.0*60*60) // 5000*60*60 mm/min^2 = 5000 mm/sec^2
-#define DEFAULT_Y_ACCELERATION (100.0*60*60) // 5000*60*60 mm/min^2 = 5000 mm/sec^2
-#define DEFAULT_Z_ACCELERATION (25.0*60*60) // 5000*60*60 mm/min^2 = 5000 mm/sec^2
+#define DEFAULT_X_STEPS_PER_MM 158.0
+#define DEFAULT_Y_STEPS_PER_MM 158.0
+#define DEFAULT_Z_STEPS_PER_MM 158.0
+#define DEFAULT_X_MAX_RATE 30000 // mm/min
+#define DEFAULT_Y_MAX_RATE 30000 // mm/min
+#define DEFAULT_Z_MAX_RATE 500.0 // mm/min
+#define DEFAULT_X_ACCELERATION (5000.0*60*60) // 5000*60*60 mm/min^2 = 5000 mm/sec^2
+#define DEFAULT_Y_ACCELERATION (5000.0*60*60) // 5000*60*60 mm/min^2 = 5000 mm/sec^2
+#define DEFAULT_Z_ACCELERATION (5000.0*60*60) // 5000*60*60 mm/min^2 = 5000 mm/sec^2
 #define DEFAULT_X_CURRENT 0.0 // amps
 #define DEFAULT_Y_CURRENT 0.0 // amps
-#define DEFAULT_Z_CURRENT 0.9 // amps
+#define DEFAULT_Z_CURRENT 0.0 // amps
 #define DEFAULT_A_CURRENT 0.0  // amps
-#define DEFAULT_X_MAX_TRAVEL 320.0 // mm
-#define DEFAULT_Y_MAX_TRAVEL 384.0 // mm
-#define DEFAULT_Z_MAX_TRAVEL 130.0 // mm
-#define DEFAULT_SPINDLE_PWM_FREQ          15000        // Hz
+#define DEFAULT_X_MAX_TRAVEL 200.0 // mm
+#define DEFAULT_Y_MAX_TRAVEL 200.0 // mm
+#define DEFAULT_Z_MAX_TRAVEL 200.0 // mm
+#define DEFAULT_SPINDLE_PWM_FREQ          5000        // Hz
 #define DEFAULT_SPINDLE_PWM_OFF_VALUE     0.0         // Percent
 #define DEFAULT_SPINDLE_PWM_MIN_VALUE     0.0         // Percent
 #define DEFAULT_SPINDLE_PWM_MAX_VALUE     100.0       // Percent
-#define DEFAULT_SPINDLE_RPM_MAX 12000 // rpm
-#define DEFAULT_SPINDLE_RPM_MIN 1000 // rpm
+#define DEFAULT_SPINDLE_RPM_MAX 1.0 // rpm
+#define DEFAULT_SPINDLE_RPM_MIN 0.0 // rpm
 #define DEFAULT_STEP_PULSE_MICROSECONDS 1
 #define DEFAULT_STEPPING_INVERT_MASK 0
-#define DEFAULT_DIRECTION_INVERT_MASK 5
-#define DEFAULT_STEPPER_IDLE_LOCK_TIME 125 // msec (0-254, 255 keeps steppers enabled)
-#define DEFAULT_STATUS_REPORT_MASK 1 // WPos enabled
+#define DEFAULT_DIRECTION_INVERT_MASK 0
+#define DEFAULT_STEPPER_IDLE_LOCK_TIME 25 // msec (0-254, 255 keeps steppers enabled)
+#define DEFAULT_STATUS_REPORT_MASK 0 // WPos enabled
 #define DEFAULT_JUNCTION_DEVIATION 0.01 // mm
 #define DEFAULT_ARC_TOLERANCE 0.002 // mm
 #define DEFAULT_REPORT_INCHES 0 // false
 #define DEFAULT_INVERT_ST_ENABLE 0 // false
 #define DEFAULT_INVERT_LIMIT_PINS 0 // false
-#define DEFAULT_SOFT_LIMIT_ENABLE 1 // false
-#define DEFAULT_HARD_LIMIT_ENABLE 1  // false
+#define DEFAULT_SOFT_LIMIT_ENABLE 0 // false
+#define DEFAULT_HARD_LIMIT_ENABLE 0  // false
 #define DEFAULT_INVERT_PROBE_PIN 0 // false
-#define DEFAULT_LASER_MODE 0 // true
-#define DEFAULT_HOMING_ENABLE 1  // false
-#define DEFAULT_HOMING_DIR_MASK 3 // move positive dir
+#define DEFAULT_LASER_MODE 1 // true
+#define DEFAULT_HOMING_ENABLE 0  // false
+#define DEFAULT_HOMING_DIR_MASK 0 // move positive dir
 #define DEFAULT_HOMING_FEED_RATE 25.0 // mm/min
-#define DEFAULT_HOMING_SEEK_RATE 2500.0 // mm/min
-#define DEFAULT_HOMING_DEBOUNCE_DELAY 50 // msec (0-65k)
+#define DEFAULT_HOMING_SEEK_RATE 500.0 // mm/min
+#define DEFAULT_HOMING_DEBOUNCE_DELAY 250 // msec (0-65k)
 #define DEFAULT_HOMING_PULLOFF 1.0 // mm
 
 #endif
