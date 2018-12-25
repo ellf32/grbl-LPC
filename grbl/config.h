@@ -707,13 +707,13 @@
 #define CONTROL_INVERT_MASK   CONTROL_MASK // May be re-defined to only invert certain control pins.
 
 // Define probe switch input pin.
--#define LIMIT_DDR         LPC_GPIO1->FIODIR
--#define LIMIT_PIN         LPC_GPIO1->FIOPIN
--#define LIMIT_PORT        LPC_GPIO1->FIOPIN
-+#define PROBE_DDR         LPC_GPIO1->FIODIR
-+#define PROBE_PIN         LPC_GPIO1->FIOPIN
-+#define PROBE_PORT        LPC_GPIO1->FIOPIN
- #define PROBE_BIT       28  // Z-MIN=28
+#define LIMIT_DDR         LPC_GPIO1->FIODIR
+#define LIMIT_PIN         LPC_GPIO1->FIOPIN
+#define LIMIT_PORT        LPC_GPIO1->FIOPIN
+#define PROBE_DDR         LPC_GPIO1->FIODIR
+#define PROBE_PIN         LPC_GPIO1->FIOPIN
+#define PROBE_PORT        LPC_GPIO1->FIOPIN
+#define PROBE_BIT       28  // Z-MIN=28
 
 // The LPC17xx has 6 PWM channels. Each channel has 2 pins. It can drive both pins simultaneously to the same value.
 //
