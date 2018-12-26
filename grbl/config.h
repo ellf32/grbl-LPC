@@ -709,7 +709,7 @@
 // Define probe switch input pin.
 #define PROBE_DDR         NotUsed
 #define PROBE_PIN         NotUsed
-#define PROBE_PORT        NotUsed
+#define PROBE_PORT        LPC_GPIO1->FIO1PIN
 #define PROBE_BIT       28  // Z-MIN=28
 #define PROBE_MASK      (1<<PROBE_BIT)
 
