@@ -707,9 +707,9 @@
 #define CONTROL_INVERT_MASK   CONTROL_MASK // May be re-defined to only invert certain control pins.
 
 // Define probe switch input pin.
-#define PROBE_DDR         LPC_GPIO1->FIO1DIR
-#define PROBE_PIN         LPC_GPIO1->FIO1PIN
-#define PROBE_PORT        LPC_GPIO1->FIO1PIN
+#define PROBE_DDR         NotUsed
+#define PROBE_PIN         NotUsed
+#define PROBE_PORT        NotUsed
 #define PROBE_BIT       28  // Z-MIN=28
 #define PROBE_MASK      (1<<PROBE_BIT)
 
