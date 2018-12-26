@@ -710,7 +710,7 @@
 #define PROBE_DDR       NotUsed
 #define PROBE_PIN       NotUsed
 #define PROBE_PORT      NotUsed
-#define PROBE_BIT       25  // Uno Analog Pin 5
+#define PROBE_BIT       23  // Uno Analog Pin 5
 #define PROBE_MASK      (1<<PROBE_BIT)
 
 // The LPC17xx has 6 PWM channels. Each channel has 2 pins. It can drive both pins simultaneously to the same value.
